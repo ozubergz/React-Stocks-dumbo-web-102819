@@ -21,7 +21,7 @@ class StockContainer extends Component {
     }
 
     return stocks.map(stock => {
-      return <Stock handleBuyStock={this.props.handleBuyStock} stock={stock}/>
+      return <Stock handleClick={this.props.handleClick} stock={stock}/>
     });
   }
 

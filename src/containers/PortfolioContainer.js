@@ -9,7 +9,7 @@ class PortfolioContainer extends Component {
         return (
             <Stock
               portfolioList={'portfolioList'}
-              handleSellStock={this.props.handleSellStock}
+              handleClick={this.props.handleClick}
               stock={stock}
             />
           )

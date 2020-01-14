@@ -2,7 +2,7 @@ import React from 'react'
 
 const Stock = (props) => (
 
-  <div>
+  <div onClick={() => props.handleClick(props.stock.id)}>
     <div className="card">
       <div className="card-body">
         <h5 className="card-title">
@@ -12,12 +12,6 @@ const Stock = (props) => (
           {props.stock.price}
         </p>
       </div>
-      {
-        !props.portfolioList ? 
-          <button onClick={() => props.handleBuyStock(props.stock)}>Buy</button> :
-          <button onClick={() => props.handleSellStock(props.stock.id)}>Sell</button>
-      }
-     
     </div>
   </div>
 );

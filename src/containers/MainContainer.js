@@ -18,8 +18,9 @@ class MainContainer extends Component {
     .then(stocks => this.setState({ stocks }))
   }
 
-  handleBuyStock = (stock) => {
-    let savedStocks = [...this.state.savedStocks, stock];
+  handleBuyStock = (id) => {
+    let newStock = this.state.stocks.find(stock => stock.id === id)
+    let savedStocks = [...this.state.savedStocks, newStock];
     this.setState({ savedStocks });
   }
 
@@ -51,13 +52,13 @@ class MainContainer extends Component {
               <StockContainer
                 selectValue={this.state.selectValue}
                 radioValue={this.state.radioValue}
-                handleBuyStock={this.handleBuyStock}
+                handleClick={this.handleBuyStock}
                 stocks={this.state.stocks}
               />
             </div>
             <div className="col-4">
               <PortfolioContainer
-                handleSellStock={this.handleSellStock}
+                handleClick={this.handleSellStock}
                 savedStocks={this.state.savedStocks}
               />
             </div>
